@@ -1,0 +1,68 @@
+{
+  "name": "fe-util",
+  "version": "1.39.0",
+  "description": "前端工具库",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": "git@github.com:lip2up/fe-util.git",
+  "author": "张鹏 <lip2up@qq.com>",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf ./dist",
+    "doc": "typedoc src && cat util/custom.css >> doc/assets/css/main.css",
+    "build": "yarn clean && rollup -c",
+    "pub": "yarn test && yarn build && npm publish",
+    "test": "jest tests"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "@types/ali-oss": "^6.0.4",
+    "@types/deep-extend": "^0.4.31",
+    "@types/jest": "^24.0.23",
+    "@types/lodash": "^4.14.149",
+    "@types/md5": "^2.1.33",
+    "@types/url-join": "^4.0.0",
+    "@zerollup/ts-transform-paths": "^1.7.7",
+    "jest": "^26.0.1",
+    "lint-staged": "^9.4.3",
+    "rimraf": "^3.0.0",
+    "rollup": "^1.27.3",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-typescript2": "^0.27.1",
+    "ts-jest": "^26.1.0",
+    "tslib": "^2.0.0",
+    "tslint": "^6.1.2",
+    "typedoc": "^0.17.7",
+    "typedoc-plugin-sourcefile-url": "^1.0.6",
+    "typescript": "^3.9.5",
+    "yorkie": "^2.0.0"
+  },
+  "dependencies": {
+    "@types/raf": "^3.4.0",
+    "ali-oss": "^6.1.1",
+    "axios": "^0.19.0",
+    "color-parse": "^1.3.8",
+    "core-js": "^3.4.1",
+    "deep-extend": "^0.6.0",
+    "exif-js": "^2.3.0",
+    "lodash": "^4.17.15",
+    "md5": "^2.2.1",
+    "raf": "^3.4.1",
+    "url-join": "^4.0.1"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "yarn test",
+      "git add"
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+/* custom styles goes here */
+
+dl.tsd-comment-tags dt {
+  margin-bottom: .8em;
+  user-select: none;
+  border: 0;
+  color: #060;
+  background-color: rgba(0, 128, 0, .1);
+}
+
+dl.tsd-comment-tags dt::before {
+  content: '@';
+}
+
+dl.tsd-comment-tags dd {
+  margin: 0;
+}
+
+ul.tsd-descriptions h4 {
+  color: #9f02de;
+}
+
+dl.tsd-comment-tags p {
+  margin: 1em 0;
+}

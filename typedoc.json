@@ -1,0 +1,6 @@
+{
+  "out": "doc",
+  "mode": "file",
+  "name": "前端工具库",
+  "sourcefile-url-prefix": "https://github.com/lip2up/fe-util/"
+}

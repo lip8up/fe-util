@@ -6,8 +6,8 @@ test('arrayMap', () => {
   expect(arrayMap([], '')).toEqual({})
 
   const list = [
-    { name: 'lip', age: 22, sex: 1 },
-    { name: 'coco', age: 16, sex: 0 }
+    { name: 'lip', age: 22, sex: 1, b: false },
+    { name: 'coco', age: 16, sex: 0, b: true }
   ]
 
   // 基本用法：属性 => 属性

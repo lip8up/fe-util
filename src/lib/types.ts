@@ -7,7 +7,8 @@
  */
 export interface MapType<T = any> {
   [key: string]: T
-  [index: number]: T
+  [key: number]: T
+  [key: symbol]: T
 }
 
 /**

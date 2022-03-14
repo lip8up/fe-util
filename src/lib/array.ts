@@ -2,11 +2,18 @@ import { MapType } from './types'
 import { stringIsEmpty } from './string'
 
 /**
- * toMap 回调函数，该函数接收数组中的每一项 `item`，返回一个字符串
+ * toMap 键回调函数，该函数接收数组中的每一项 `item`，返回一个字符串
  *
- * @param ArrayMapCallback.item 数据中的每一项
+ * @param item 数据中的每一项
  */
-export type ArrayMapCallback = (item: any) => string
+export type ArrayMapKeyCallback<T> = (item: T) => string | number | symbol
+
+/**
+ * toMap 值回调函数，该函数接收数组中的每一项 `item`，可返回任意值
+ *
+ * @param item 数据中的每一项
+ */
+export type ArrayMapValueCallback<T, R> = (item: T) => R
 
 /**
  * 将一组数据，转换成 `map` 返回，`map` 指的是键值对结构，在 `js` 中对应的就是 `PlainObject`
@@ -62,17 +69,17 @@ export type ArrayMapCallback = (item: any) => string
  * @param key    map 的 `key` 取值，取值方式参见上面描述
  * @param value  map 的 `value` 取值，取值方式参见上面描述
  */
-export function arrayMap(
-  array: any[] | null,
-  key: string | ArrayMapCallback,
-  value?: string | ArrayMapCallback
-): MapType<any> {
-  return (array || []).reduce((map, item) => {
-    const k = typeof key === 'string' ? item[key] : key(item)
-    const v = value ? (typeof value === 'string' ? item[value] : value(item)) : item
-    k != null && (map[k] = v)
+export function arrayMap<T>(array: T[] | null, key: string | ArrayMapKeyCallback<T>): MapType<T>
+export function arrayMap<T, R, V extends keyof T>(array: T[] | null, key: string | ArrayMapKeyCallback<T>, value: V): MapType<T[V]>  // 为了自动推断 R。必须放在下行之前，约束更紧的放在签名。
+export function arrayMap<T, R>(array: T[] | null, key: string | ArrayMapKeyCallback<T>, value: string): MapType<R>                   // 比上行约束更宽松，放在下面，不要求值必须是 T 的显式字段。
+export function arrayMap<T, R, V>(array: T[] | null, key: string | ArrayMapKeyCallback<T>, value: ArrayMapValueCallback<T, V>): MapType<V>
+export function arrayMap<T, R, V>(array: T[] | null, key: string | ArrayMapKeyCallback<T>, value?: string | ArrayMapValueCallback<T, V>) {
+  return (array || []).reduce((map, item: any) => {
+    const k = typeof key === 'function' ? key(item) : (item[key] as any as string)
+    const v = value ? (typeof value === 'function' ? value(item) : item[value]) : item
+    k != null && (map[k as any] = v)
     return map
-  }, {})
+  }, {} as MapType<any>)
 }
 
 /**

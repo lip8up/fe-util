@@ -36,4 +36,6 @@ yarn doc
 
 ## TODOs
 
+- 解决 ajax.ts 自定义的问题
+
 - 解决 `typedoc` 解析 `type` 文档，需要写 `T.param` 的问题

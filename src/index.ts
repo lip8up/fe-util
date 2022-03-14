@@ -1,7 +1,8 @@
 export {
   arrayMap,
   arrayParse,
-  ArrayMapCallback
+  ArrayMapKeyCallback,
+  ArrayMapValueCallback
 } from './lib/array'
 
 export {

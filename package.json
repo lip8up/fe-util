@@ -1,6 +1,6 @@
 {
   "name": "fe-util",
-  "version": "1.39.0",
+  "version": "1.39.6",
   "description": "前端工具库",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",

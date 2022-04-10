@@ -28,7 +28,6 @@ export default [
     plugins: [
       typescript({
         tsconfig: 'tsconfig.json',
-        objectHashIgnoreUnknownHack: true,
         transformers: [service => transformPaths(service.getProgram())]
       }),
       babel({

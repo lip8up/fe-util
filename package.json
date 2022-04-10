@@ -1,6 +1,6 @@
 {
   "name": "fe-util",
-  "version": "1.39.6",
+  "version": "1.39.9",
   "description": "前端工具库",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -15,8 +15,11 @@
     "clean": "rimraf ./dist",
     "doc": "typedoc src && cat util/custom.css >> doc/assets/css/main.css",
     "build": "yarn clean && rollup -c",
-    "pub": "yarn test && yarn build && npm publish",
+    "pub": "yarn test && yarn build && yarn publish",
     "test": "jest tests"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",

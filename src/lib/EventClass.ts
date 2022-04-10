@@ -111,7 +111,7 @@ export default class EventClass {
     return this
   }
 
-  _handlerIndex(name: string, handler: EventHandler) {
+  private _handlerIndex(name: string, handler: EventHandler) {
     const list: EventHandlerPriority[] = this._eventMap[name] || []
     const index = list.findIndex(it => it.handler === handler)
     return { list, index, has: index > -1 }

@@ -45,8 +45,8 @@ export default function loadImage(
     const img = new Image
 
     const clearHandlers = () => {
-      delete img.onload
-      delete img.onerror
+      img.onload = null
+      img.onerror = null
     }
 
     promise = promiseMap[url] = new Promise((resolve, reject) => {

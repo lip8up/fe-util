@@ -1,6 +1,5 @@
 /**
  * 生成 tree，遍历 tree，转换 tree
- * @author zhangpeng
  */
 import { groupBy } from 'lodash'
 import { MapType } from './types'

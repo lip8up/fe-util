@@ -13,8 +13,8 @@ export default function loadScript(url: string) {
     const script = document.createElement('script')
 
     const clearHandlers = () => {
-      delete script.onload
-      delete script.onerror
+      script.onload = null
+      script.onerror = null
     }
 
     promise = promiseMap[url] = new Promise((resolve, reject) => {

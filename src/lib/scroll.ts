@@ -104,7 +104,7 @@ export function scrollUseRootTop(options: ScrollWatchOptions = {}) {
  * @param duration 动画进行时间，毫秒数，默认 288
  */
 export function scrollTopTo(to: number, duration = 288) {
-  return new Promise(resolve => {
+  return new Promise<void>(resolve => {
     let current = scrollGetRootTop()
     const isDown = current < to
     const frames = duration === 0 ? 1 : Math.round(duration / 16)

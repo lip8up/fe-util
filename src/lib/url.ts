@@ -8,6 +8,7 @@ const wellKnownDefaultValueMap = {
  * 美化请求参数
  * @param data 数据
  * @param defaultValueMap 默认数据
+ * @deprecated 请使用浏览器标准 https://developer.mozilla.org/zh-CN/docs/Web/API/URL_API
  */
 export function prettyQuery(data: any, defaultValueMap: any = {}) {
   const defaultMap = {
@@ -65,6 +66,7 @@ const decodeParams = (obj: any) => {
  * 构建新的 URL
  * @param url 现有的 URL，可以带有 query 参数
  * @param query query 字符串或对象，去除某个参数，可以使用 { some: null }
+ * @deprecated 请使用浏览器标准 https://developer.mozilla.org/zh-CN/docs/Web/API/URL_API
  */
 export function buildUrl(url: string, query: any) {
   const durl = decodeURI(url)
@@ -83,6 +85,7 @@ const getParams = () => param2Map(location.search.replace(/^\?/, ''))
  * 获取 url 参数
  * @param name 参数名，不传则获取全部
  * @param defaultValue 参数默认值
+ * @deprecated 请使用浏览器标准 https://developer.mozilla.org/zh-CN/docs/Web/API/URL_API
  */
 export function urlParam(name?: string, defaultValue = null) {
   const params = getParams()
@@ -92,6 +95,7 @@ export function urlParam(name?: string, defaultValue = null) {
 /**
  * 是否为绝对路径 url，诸如：http:、https:、sftp:、// 开头的网址，被认为是绝对路径
  * @param url url 路径
+ * @deprecated 请使用浏览器标准 https://developer.mozilla.org/zh-CN/docs/Web/API/URL_API
  */
 export function isAbsoluteUrl(url: string) {
   return /^[a-z][a-z0-9+.-]*:|^\/\//.test(url)
@@ -101,6 +105,7 @@ export function isAbsoluteUrl(url: string) {
  * 加工成全路径的 url，若参数 `path` 为绝对路径，则直接返回 `path`
  * @param base 基础 url
  * @param path 路径部分
+ * @deprecated 请使用浏览器标准 https://developer.mozilla.org/zh-CN/docs/Web/API/URL_API
  */
 export function fullUrl(base: string, path: string) {
   return isAbsoluteUrl(path) ? path : urlJoin(base, path)

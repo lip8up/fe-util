@@ -1,6 +1,5 @@
 /**
  * 所有的 Ajax 请求，都要使用该组件进行
- * @author zhangpeng
  */
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios'
 import event from '@/lib/event'
@@ -138,7 +137,7 @@ const request = async <DataType = any>(url: string, options: AjaxOptions): Promi
  * @param data 请求数据
  * @param options 选项
  */
-export async function ajaxGet<DataType = any>(url: string, data?: object, options?: AjaxOptions) {
+export async function ajaxGet<DataType = any>(url: string, data?: Record<string, any>, options?: AjaxOptions) {
   return request<DataType>(url, {
     method: 'get',
     params: {
@@ -155,7 +154,7 @@ export async function ajaxGet<DataType = any>(url: string, data?: object, option
  * @param data 请求数据
  * @param options 选项
  */
-export async function ajaxPost<DataType = any>(url: string, data?: object, options?: AjaxOptions) {
+export async function ajaxPost<DataType = any>(url: string, data?: Record<string, any>, options?: AjaxOptions) {
   return request<DataType>(url, {
     method: 'post',
     data,
@@ -169,7 +168,7 @@ export async function ajaxPost<DataType = any>(url: string, data?: object, optio
  * @param data 请求数据
  * @param options 选项
  */
-export async function ajaxPut<DataType = any>(url: string, data?: object, options?: AjaxOptions) {
+export async function ajaxPut<DataType = any>(url: string, data?: Record<string, any>, options?: AjaxOptions) {
   return request<DataType>(url, {
     method: 'put',
     data,
@@ -183,7 +182,7 @@ export async function ajaxPut<DataType = any>(url: string, data?: object, option
  * @param data 请求数据
  * @param options 选项
  */
-export async function ajaxDelete<DataType = any>(url: string, data?: object, options?: AjaxOptions) {
+export async function ajaxDelete<DataType = any>(url: string, data?: Record<string, any>, options?: AjaxOptions) {
   return request<DataType>(url, {
     method: 'delete',
     data,

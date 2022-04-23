@@ -58,3 +58,11 @@ export function dot(object: any, path: string | number | symbol) {
   const list = at(object, path)
   return list[0]
 }
+
+
+/**
+ * 复制数据，使用 JSON.parse(JSON.stringify(data)) 的方式。
+ *
+ * @param data 要复制的数据
+ */
+export const cloneData = <T>(data: T): T => JSON.parse(JSON.stringify(data))

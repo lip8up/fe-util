@@ -1,4 +1,4 @@
-import { arrayMap, arrayParse } from '../src'
+import { arrayMap, arrayParse, parseIds } from '../src'
 
 test('arrayMap', () => {
   // 不用预先判断 null，可以直接传进去，返回空 `map`（即空对象）
@@ -58,4 +58,14 @@ test('arrayParse', () => {
   // 其他类型，抛出异常
   const fakeString = 1 as any
   expect(() => arrayParse(fakeString)).toThrow(Error)
+})
+
+test('parseIds', () => {
+  expect(parseIds('')).toEqual([])
+  expect(parseIds('1')).toEqual([1])
+  expect(parseIds('1,2,3')).toEqual([1, 2, 3])
+
+  expect(parseIds('1, 2, 3')).toEqual([1, 2, 3])
+  expect(parseIds('[1, 2, 3]')).toEqual([1, 2, 3])
+  expect(parseIds('1, 2, 3', id => `id-${id}`)).toEqual(['id-1', 'id-2', 'id-3'])
 })

@@ -2,7 +2,8 @@ export {
   arrayMap,
   arrayParse,
   ArrayMapKeyCallback,
-  ArrayMapValueCallback
+  ArrayMapValueCallback,
+  parseIds
 } from './lib/array'
 
 export {
@@ -61,7 +62,8 @@ export {
 export {
   objectSlice,
   objectClean,
-  dot
+  dot,
+  cloneData
 } from './lib/object'
 
 export {

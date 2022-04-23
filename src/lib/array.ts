@@ -153,3 +153,24 @@ export function arrayParse<T = string>(
 
   return result as any[]
 }
+
+const defaultDealId = (id: string) => parseInt(id, 10)
+
+/**
+ * 将以英文 , 号分隔的 ID 字符串如 1,2,3，解析成 int[]，如：[1, 2, 3]。
+ *
+ * @param string 以英文 , 号分隔的 ID 字符串如 1,2,3
+ */
+export function parseIds(string: string): number[]
+/**
+ * 将以英文 , 号分隔的 ID 字符串，解析成 T[]。
+ *
+ * @param string 以英文 , 号分隔的 ID 字符串
+ * @param dealId 处理每一个 ID 的函数
+ */
+export function parseIds<T>(string: string, dealId: ((id: string) => T) | undefined): T[]
+export function parseIds<T>(string: string, dealId?: (id: string) => T) {
+  const finalDealId = dealId ?? defaultDealId
+  const ids = arrayParse(string).map(id => finalDealId(id))
+  return ids as any[]
+}

@@ -65,4 +65,4 @@ export function dot(object: any, path: string | number | symbol) {
  *
  * @param data 要复制的数据
  */
-export const cloneData = <T>(data: T): T => JSON.parse(JSON.stringify(data))
+export const cloneData = <T>(data: T): T => data !== undefined ? JSON.parse(JSON.stringify(data)) : undefined

@@ -2,6 +2,10 @@
 
 前端工具库
 
+https://www.npmjs.com/package/fe-util
+
+https://www.npmmirror.com/sync/fe-util
+
 ## 原则
 
 - 不要将与业务逻辑有关的代码放在本库

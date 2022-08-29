@@ -2,8 +2,8 @@
  * 所有的 Ajax 请求，都要使用该组件进行
  */
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios'
-import event from '@/lib/event'
-import tryParseJson from '@/lib/tryParseJson'
+import event from '../lib/event'
+import tryParseJson from '../lib/tryParseJson'
 
 /**
  * Ajax 调用结果

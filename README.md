@@ -22,4 +22,4 @@ pnpm test
 
 ## TODOs
 
-- 解决 ajax.ts 自定义的问题
+- 解决 ajax.ts 自定义问题

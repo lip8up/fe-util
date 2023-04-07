@@ -1,5 +1,3 @@
-import urlJoin from 'url-join'
-
 const wellKnownDefaultValueMap = {
   page: 1
 }
@@ -90,23 +88,4 @@ const getParams = () => param2Map(location.search.replace(/^\?/, ''))
 export function urlParam(name?: string, defaultValue = null) {
   const params = getParams()
   return name ? (name in params ? params[name] : defaultValue) : params
-}
-
-/**
- * 是否为绝对路径 url，诸如：http:、https:、sftp:、// 开头的网址，被认为是绝对路径
- * @param url url 路径
- * @deprecated 请使用浏览器标准 https://developer.mozilla.org/zh-CN/docs/Web/API/URL_API
- */
-export function isAbsoluteUrl(url: string) {
-  return /^[a-z][a-z0-9+.-]*:|^\/\//.test(url)
-}
-
-/**
- * 加工成全路径的 url，若参数 `path` 为绝对路径，则直接返回 `path`
- * @param base 基础 url
- * @param path 路径部分
- * @deprecated 请使用浏览器标准 https://developer.mozilla.org/zh-CN/docs/Web/API/URL_API
- */
-export function fullUrl(base: string, path: string) {
-  return isAbsoluteUrl(path) ? path : urlJoin(base, path)
 }

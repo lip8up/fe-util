@@ -81,7 +81,7 @@ export {
 
 export type { MapType, CancelableEvent, GetType } from './lib/types'
 
-export { prettyQuery, buildUrl, urlParam, isAbsoluteUrl, fullUrl } from './lib/url'
+export { prettyQuery, buildUrl, urlParam } from './lib/url'
 
 export type { AjaxResult, AjaxOptions } from './biz/ajax'
 

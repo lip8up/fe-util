@@ -5,7 +5,10 @@ module.exports = {
       {
         modules: false,
         useBuiltIns: 'usage',
-        corejs: '3.4.1'
+        corejs: '3.30.0',
+        targets: {
+          node: 'current'
+        }
       }
     ]
   ]

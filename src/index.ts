@@ -86,3 +86,12 @@ export { prettyQuery, buildUrl, urlParam } from './lib/url'
 export type { AjaxResult, AjaxOptions } from './biz/ajax'
 
 export { ajaxGet, ajaxPost, ajaxPut, ajaxDelete, isAjaxResult, getAjaxBaseUrl, setAjaxBaseUrl } from './biz/ajax'
+
+export {
+  base64Encode,
+  base64Decode,
+  safeUrlBase64Encode,
+  safeUrlBase64Decode,
+  jsonSafeUrlBase64Encode,
+  jsonSafeUrlBase64Decode
+} from './lib/base64'

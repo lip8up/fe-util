@@ -13,11 +13,14 @@ export { cssPx2vw, cssColorOpacity } from './lib/css'
 export type { DurationFormatOptions } from './lib/duration'
 export { durationParse, durationFormat, durationAdd, durationSub } from './lib/duration'
 
+export type { EventHandler, EventHandlerMap, EventMonitor, EventOptions } from './lib/EventClass'
+export { default as EventClass } from './lib/EventClass'
+
 export type { EventChainOptions } from './lib/EventChain'
 export { default as EventChain } from './lib/EventChain'
 
-export type { EventHandler, EventHandlerMap, EventMonitor, EventOptions } from './lib/EventClass'
-export { default as EventClass } from './lib/EventClass'
+export type { EventOneHandler } from './lib/EventOne'
+export { default as EventOne } from './lib/EventOne'
 
 export { default as event } from './lib/event'
 

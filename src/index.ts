@@ -98,3 +98,5 @@ export {
   jsonSafeUrlBase64Encode,
   jsonSafeUrlBase64Decode
 } from './lib/base64'
+
+export { default as ExpireCache } from './lib/ExpireCache'

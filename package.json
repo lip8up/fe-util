@@ -8,8 +8,8 @@
   "files": [
     "dist"
   ],
-  "repository": "git@github.com:lip2up/fe-util.git",
-  "author": "张鹏 <lip2up@qq.com>",
+  "repository": "git@github.com:lip8up/fe-util.git",
+  "author": "lip8up <lip8up@qq.com>",
   "license": "MIT",
   "scripts": {
     "dev": "pnpm unbuild --stub",

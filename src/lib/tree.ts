@@ -30,6 +30,8 @@ export interface ListToTreeOptions extends TreeOptions {
   parentKey?: string
   /** 根节点的值 */
   rootValue?: any
+  /** 预处理项函数 */
+  dealItem?: (item: any) => void
 }
 
 /**
@@ -43,11 +45,12 @@ export const listToTreeDefaultOptions = {
 }
 
 const makeTree = (list: any[], group: MapType<any[]>, opts: ListToTreeOptions) => {
-  list.forEach(it => {
-    const id = it[opts.idKey!]
+  list.forEach(item => {
+    opts.dealItem?.(item)
+    const id = item[opts.idKey!]
     const children = group[id]
     if (children != null) {
-      it[opts.childrenKey!] = children
+      item[opts.childrenKey!] = children
       makeTree(children, group, opts)
     }
   })

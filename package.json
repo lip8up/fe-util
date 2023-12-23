@@ -1,6 +1,6 @@
 {
   "name": "fe-util",
-  "version": "6.199.0",
+  "version": "6.666.0",
   "description": "前端工具库",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
